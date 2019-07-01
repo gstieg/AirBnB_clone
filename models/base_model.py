@@ -8,7 +8,6 @@ for other classes'''
 class BaseModel():
     ''''''
 
-<<<<<<< HEAD
     def __init__(self, *args, **kwargs):
         '''intializing values'''
         if not kwargs:
@@ -25,7 +24,7 @@ class BaseModel():
     def __str__(self):
         '''returns string representation'''
         return "[{}] ({}) {}".format\
-=======
+
     def __init__(self):
         '''intializing values'''
         self.id = str(uuid.uuid4())
@@ -34,8 +33,8 @@ class BaseModel():
 
     def __str__(self):
         '''returns string representation'''
-        return "[{}] ({}) {}".format/
->>>>>>> 15c8c41b499efce2f2733fd547aa6fd0e594323d
+        return "[{}] ({}) {}".format
+
         (self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
