@@ -5,12 +5,21 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter"""
-    prompt = ("(hbnb)")
+    prompt = "(hbnb) "
 
-    def quit(self, args):
+    def do_quit(self, args):
        """quit the command"""
-       return True
+       exit()        
 
-    def EOF(self, args):
+    def do_EOF(self, args):
         """ quits after reaching end of file"""
         return True
+
+    def empty_line(self,args):
+        """ dosent execute on empty line"""
+        pass
+
+    
+
+if __name__ == "__main__":
+    HBNBCommand().cmdloop()
