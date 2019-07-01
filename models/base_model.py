@@ -8,6 +8,7 @@ for other classes'''
 class BaseModel():
     ''''''
 
+
     def __init__(self, *args, **kwargs):
         '''intializing values'''
         if not kwargs:
@@ -23,7 +24,7 @@ class BaseModel():
 
     def __str__(self):
         '''returns string representation'''
-        return "[{}] ({}) {}".format\
+        return "[{}] ({}) {}".format
 
     def __init__(self):
         '''intializing values'''
