@@ -11,9 +11,10 @@ from models.state import State
 from models.place import Place
 from models.review import Review
 
+
 class FileStorage():
     """ serializes instances to a JSON file and deserializes JSON file to
-    instances 
+    instances
 
     __file_path: path to JSON file
     __objects: empty dictionary that will store all objects
@@ -37,18 +38,6 @@ class FileStorage():
         with open(self.__file_path, mode='w') as s_file:
             json.dump(s, s_file)
 
-    '''def reload(self):
-        desearializes the JSON file to __objects
-        try:
-            with open(self.__file_path, mode='r') as r_file:
-                new_dict = json.load(r_file)
-                for key, value in new_dict.items():
-                    new_obj = eval(value['__class__'](**value)
-               
-                    self.__objects[key] = new_obj
-        except FileNotFoundError:
-            pass'''
-
     def reload(self):
         '''
         desearializes the JSON file to __objects
@@ -61,6 +50,4 @@ class FileStorage():
                     new_obj = eval(value["__class__"])(**value)
                     self.__objects[key] = new_obj
         except FileNotFoundError:
-
-          pass
-
+            pass
