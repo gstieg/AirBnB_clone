@@ -14,7 +14,7 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
-            models.storage.new(self) #stores new instance
+            models.storage.new(self)  # stores new instance
         else:
             for key, value in kwargs.items():
                 if key == 'updated_at' or key == 'created_at':
@@ -24,8 +24,8 @@ class BaseModel():
 
     def __str__(self):
         '''returns string representation'''
-        return "[{}] ({}) {}".format\
-        (self.__class__.__name__, self.id, self.__dict__)
+        name_of_class = self.__class__.__name__
+        return "[{}] ({}) {}".format(name_of_class, self.id, self.__dict__)
 
     def save(self):
         '''saves the current time of creation'''
