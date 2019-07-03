@@ -13,21 +13,12 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
-<<<<<<< HEAD
-=======
-
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
 
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter"""
     prompt = "(hbnb) "
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     classes = {"BaseModel", "User", "City", "Amenity", "Review", "State", "Place"}
-=======
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
     classes = {
         "BaseModel",
         "User",
@@ -37,10 +28,6 @@ class HBNBCommand(cmd.Cmd):
         "State",
         "Place"
         }
-<<<<<<< HEAD
-=======
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
 
     def do_quit(self, args):
         """quit the command"""
@@ -54,15 +41,7 @@ class HBNBCommand(cmd.Cmd):
         """ dosent execute on empty line"""
         pass
 
-<<<<<<< HEAD
     def do_create(self, args):
-=======
-<<<<<<< HEAD
-    def do_create(self,args):
-=======
-    def do_create(self, args):
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
         '''creats a new instansce of basemodel, saves to json, then id print'''
         argv = args.split()
         if len(argv) == 0:
@@ -108,15 +87,9 @@ class HBNBCommand(cmd.Cmd):
                     instance = obj.to_dict()
                     if instance['__class__'] == argv[0]:
                         list_obj.append(str(show[key]))
-<<<<<<< HEAD
-                print(list_obj)
-=======
-<<<<<<< HEAD
-                print(list_obj)    
-=======
-                print(list_obj)
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
+                        print(list_obj)
+                        print(list_obj)
+                        print(list_obj)
 
     def do_destroy(self, args):
         ''' deletes an instance based on its class name and id'''
@@ -137,27 +110,21 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_update(self, args):
-<<<<<<< HEAD
         ''' update instance based on the class name and id
             if not created, one will be created
         '''
         argv = args.split()
         if len(argv) == 0:
-=======
-<<<<<<< HEAD
-        ''' update instance based on the class name and id 
+        ''' update instance based on the class name and id
             if not created, one will be created
         '''
         argv = args.split()
         if len(argv)== 0:
-=======
         ''' update instance based on the class name and id
             if not created, one will be created
         '''
         argv = args.split()
         if len(argv) == 0:
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
             print("** class name missing **")
         elif argv[0] not in self.classes:
             print("** class doesn't exist **")
