@@ -17,16 +17,21 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+<<<<<<< HEAD
             models.storage.new(self) #stores new instance
+=======
+            models.storage.new(self)  # stores new instance
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
         else:
             for key, value in kwargs.items():
                 if key == 'updated_at' or key == 'created_at':
                     value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
-                if key is not '__class__':
+                if key != '__class__':
                     setattr(self, key, value)
 
     def __str__(self):
         '''returns string representation'''
+<<<<<<< HEAD
         return "[{}] ({}) {}".format
 
     def __init__(self):
@@ -40,6 +45,10 @@ class BaseModel():
         return "[{}] ({}) {}".format
 
         (self.__class__.__name__, self.id, self.__dict__)
+=======
+        name_of_class = self.__class__.__name__
+        return "[{}] ({}) {}".format(name_of_class, self.id, self.__dict__)
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
 
     def save(self):
         '''saves the current time of creation'''

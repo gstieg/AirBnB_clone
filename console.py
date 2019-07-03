@@ -13,25 +13,45 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter"""
     prompt = "(hbnb) "
+<<<<<<< HEAD
     classes = {"BaseModel", "User", "City", "Amenity", "Review", "State", "Place"}
+=======
+    classes = {
+        "BaseModel",
+        "User",
+        "City",
+        "Amenity",
+        "Review",
+        "State",
+        "Place"
+        }
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
 
     def do_quit(self, args):
-       """quit the command"""
-       exit()        
+        """quit the command"""
+        return True
 
     def do_EOF(self, args):
         """ quits after reaching end of file"""
         return True
 
-    def empty_line(self,args):
+    def empty_line(self, args):
         """ dosent execute on empty line"""
         pass
 
+<<<<<<< HEAD
     def do_create(self,args):
+=======
+    def do_create(self, args):
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
         '''creats a new instansce of basemodel, saves to json, then id print'''
         argv = args.split()
         if len(argv) == 0:
@@ -77,7 +97,11 @@ class HBNBCommand(cmd.Cmd):
                     instance = obj.to_dict()
                     if instance['__class__'] == argv[0]:
                         list_obj.append(str(show[key]))
+<<<<<<< HEAD
                 print(list_obj)    
+=======
+                print(list_obj)
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
 
     def do_destroy(self, args):
         ''' deletes an instance based on its class name and id'''
@@ -98,11 +122,19 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_update(self, args):
+<<<<<<< HEAD
         ''' update instance based on the class name and id 
             if not created, one will be created
         '''
         argv = args.split()
         if len(argv)== 0:
+=======
+        ''' update instance based on the class name and id
+            if not created, one will be created
+        '''
+        argv = args.split()
+        if len(argv) == 0:
+>>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
             print("** class name missing **")
         elif argv[0] not in self.classes:
             print("** class doesn't exist **")

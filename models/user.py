@@ -4,6 +4,7 @@ user class that inherits from  BaseModels class
 '''
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     '''
     email: string - empty string
