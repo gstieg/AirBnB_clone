@@ -17,6 +17,7 @@ from models.review import Review
 
 class test_file(unittest.TestCase):
     """ start by testing the actual file"""
+    FileStorage._FileStorage_objects = {}
 
     def test_setUP(self):
         FileStorage._FileStorage_objects = {}
