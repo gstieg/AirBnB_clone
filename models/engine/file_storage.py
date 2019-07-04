@@ -11,27 +11,25 @@ from models.state import State
 from models.place import Place
 from models.review import Review
 
-<<<<<<< HEAD
 
 class FileStorage():
     """ serializes instances to a JSON file and deserializes JSON file to
     instances
-=======
-<<<<<<< HEAD
+    """
+
+
 class FileStorage():
     """ serializes instances to a JSON file and deserializes JSON file to
-    instances 
-=======
+    instances"""
+
 
 class FileStorage():
     """ serializes instances to a JSON file and deserializes JSON file to
     instances
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
-
     __file_path: path to JSON file
     __objects: empty dictionary that will store all objects
     """
+
     __file_path = "file.json"
     __objects = {}
 
@@ -50,10 +48,6 @@ class FileStorage():
             s[key] = value.to_dict()
         with open(self.__file_path, mode='w') as s_file:
             json.dump(s, s_file)
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     '''def reload(self):
         desearializes the JSON file to __objects
         try:
@@ -61,14 +55,10 @@ class FileStorage():
                 new_dict = json.load(r_file)
                 for key, value in new_dict.items():
                     new_obj = eval(value['__class__'](**value)
-               
                     self.__objects[key] = new_obj
         except FileNotFoundError:
             pass'''
 
-=======
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
     def reload(self):
         '''
         desearializes the JSON file to __objects
@@ -81,14 +71,9 @@ class FileStorage():
                     new_obj = eval(value["__class__"])(**value)
                     self.__objects[key] = new_obj
         except FileNotFoundError:
-<<<<<<< HEAD
-            pass
-=======
-<<<<<<< HEAD
 
-          pass
-
-=======
             pass
->>>>>>> 9c6c762ac0b807d64026ceec308a75cd885238e5
->>>>>>> c438ae256c33bfdf7d9d305ebe433e8407b8e50d
+
+            pass
+
+            pass
