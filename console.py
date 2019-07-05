@@ -18,7 +18,8 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter"""
     prompt = "(hbnb) "
-    classes = {"BaseModel", "User", "City", "Amenity", "Review", "State", "Place"}
+    classes = {"BaseModel", "User", "City", "Amenity", "Review", "State",
+               "Place"}
     classes = {
         "BaseModel",
         "User",
@@ -115,6 +116,19 @@ class HBNBCommand(cmd.Cmd):
         '''
         argv = args.split()
         if len(argv) == 0:
+<<<<<<< HEAD
+=======
+            ''' update instance based on the class name and id
+            if not created, one will be created
+            '''
+        argv = args.split()
+        if len(argv) == 0:
+            ''' update instance based on the class name and id
+            if not created, one will be created
+        '''
+        argv = args.split()
+        if len(argv) == 0:
+>>>>>>> d75e64b6d468f8da9d952cf9e18f181d1d4a8a1a
             print("** class name missing **")
         elif argv[0] not in self.classes:
             print("** class doesn't exist **")
