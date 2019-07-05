@@ -18,7 +18,8 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter"""
     prompt = "(hbnb) "
-    classes = {"BaseModel", "User", "City", "Amenity", "Review", "State", "Place"}
+    classes = {"BaseModel", "User", "City", "Amenity", "Review", "State",
+               "Place"}
     classes = {
         "BaseModel",
         "User",
@@ -115,12 +116,12 @@ class HBNBCommand(cmd.Cmd):
         '''
         argv = args.split()
         if len(argv) == 0:
-        ''' update instance based on the class name and id
+            ''' update instance based on the class name and id
             if not created, one will be created
-        '''
+            '''
         argv = args.split()
-        if len(argv)== 0:
-        ''' update instance based on the class name and id
+        if len(argv) == 0:
+            ''' update instance based on the class name and id
             if not created, one will be created
         '''
         argv = args.split()
