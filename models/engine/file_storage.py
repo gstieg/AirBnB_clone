@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+
 """
 file class for storage
 """
+
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -10,17 +12,6 @@ from models.city import City
 from models.state import State
 from models.place import Place
 from models.review import Review
-
-
-class FileStorage():
-    """ serializes instances to a JSON file and deserializes JSON file to
-    instances
-    """
-
-
-class FileStorage():
-    """ serializes instances to a JSON file and deserializes JSON file to
-    instances"""
 
 
 class FileStorage():
@@ -48,16 +39,6 @@ class FileStorage():
             s[key] = value.to_dict()
         with open(self.__file_path, mode='w') as s_file:
             json.dump(s, s_file)
-    '''def reload(self):
-        desearializes the JSON file to __objects
-        try:
-            with open(self.__file_path, mode='r') as r_file:
-                new_dict = json.load(r_file)
-                for key, value in new_dict.items():
-                    new_obj = eval(value['__class__'](**value)
-                    self.__objects[key] = new_obj
-        except FileNotFoundError:
-            pass'''
 
     def reload(self):
         '''
@@ -71,9 +52,4 @@ class FileStorage():
                     new_obj = eval(value["__class__"])(**value)
                     self.__objects[key] = new_obj
         except FileNotFoundError:
-
-            pass
-
-            pass
-
             pass
