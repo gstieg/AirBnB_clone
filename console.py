@@ -115,16 +115,6 @@ class HBNBCommand(cmd.Cmd):
         '''
         argv = args.split()
         if len(argv) == 0:
-        ''' update instance based on the class name and id
-            if not created, one will be created
-        '''
-        argv = args.split()
-        if len(argv)== 0:
-        ''' update instance based on the class name and id
-            if not created, one will be created
-        '''
-        argv = args.split()
-        if len(argv) == 0:
             print("** class name missing **")
         elif argv[0] not in self.classes:
             print("** class doesn't exist **")
