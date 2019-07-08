@@ -1,83 +1,90 @@
 #!/usr/bin/python3
-'''
-unitest for the base module
-'''
-
-import os
-import models
-from datetime import datetime
+"""
+UnitTest for BaseModel class
+"""
 from models.base_model import BaseModel
+import unittest
+import json
+import os
+
 
 class TestBaseModel(unittest.TestCase):
-    '''Unitests for basemodel functions'''
+    """ Base Model test cases """
 
-    @classmethod
-    def setUp(sls):
-        '''setup class'''
-        cls.base = BaseModel()
-        cls.base.name = "TestBase"
-
-    def test_arguments(self):
-        '''checks and test arguments'''
-        self.assertTrue(type(self.base, "__init__"))
-        self.assertTrue(hasattr(self.base, "name"))
-        self.assertTrue(hasattr(self.base, "__class__"))
-        self.assertTrue(hasattr(self.base, "id"))
-        self.assertTrue(hasattr(self.base, "created_at"))
-        self.assertTrue(hasattr(self.base, "updated_at"))
-
-    def test_attributes(self):
-        '''checks and tests attributes'''
-        self.assertTrue(hasattr(self.base, "__init__"))
-        self.assertTrue(hasattr(self.base, "to_dict"))
-        self.assertTrue(hasattr(self.base, "id"))
-        self.assertTrue(hasattr(self.base, "save"))
-        self.assertTrue(hasattr("created_at" in self.base.__dict__))
-        self.assertTrue(hasattr("updated_at" in self.base.__dict__))
-
-    def test_init(self):
-        '''tests initialization'''
-        self.assertTrue(isinstance(self.base, BaseModel))
-
-    def test_save(self):
-        '''checks save function'''
-        self.base.save()
-        self.assertNotEqual(self.base.created_at, self.base.updated_at)
-
-    def test_todict(self):
-        '''tests to_dict function'''
-        base_dict = self.base.__dict__
-        self.assertEqual(type(self.base).__name__, "BaseModel")
-        self.assertTrue(hasattr(self.base, "__class__"))
-        self.assertTrue(type(base_dict['id']), 'str')
-        self.assertTrue(type(base_dict['created_at']), 'datetime.datetime')
-        self.assertTrue(type(base_dict['updated_at']), 'datetime.datetime')
-
-    
-    def test_str_(self):
-        """ tests str method """
-        b1_str = base.__str__()
-        self.assertEqual(b1_str,
-                         "[BaseModel] ({}) {}".format(base.id, base.__dict__))
+    def setUp(self):
+        """ set up """
+        pass
 
     def test_doc(self):
-        """tests docstrings"""
-        self.assertTrue(len(base.__doc__) > 1)
-        self.assertTrue(len(base.__init__.__doc__) > 1)
-        self.assertTrue(len(base.__str__.__doc__) > 1)
-        self.assertTrue(len(base.save.__doc__) > 1)
-        self.assertTrue(len(base.to_dict.__doc__) > 1)
+        """tests if docstrings exists """
+        self.assertTrue(len(BaseModel.__init__.__doc__) > 1)
+        self.assertTrue(len(BaseModel.__str__.__doc__) > 1)
+        self.assertTrue(len(BaseModel.save.__doc__) > 1)
+        self.assertTrue(len(BaseModel.to_dict.__doc__) > 1)
 
-    def teardown(cls):
-        '''teardown method'''
-        del cls.base
+    def test_inst_arg_kwarg(self):
+        """ tests args/kwarg to an instance """
+        my_model = BaseModel(20)
+        self.assertEqual(type(my_model).__name__, "BaseModel")
+        self.assertFalse(hasattr(my_model, "20"))
+        b1 = BaseModel(name='Gary')
+        self.assertEqual(type(b1).__name__, "BaseModel")
+        self.assertTrue(hasattr(b1, "name"))
+
+    def test_to_dict(self):
+        """ tests the to_dict method """
+        b1 = BaseModel()
+        b1_dict = b1.__dict__
+        self.assertEqual(type(b1).__name__, "BaseModel")
+        self.assertTrue(hasattr(b1, '__class__'))
+        self.assertEqual(str(b1.__class__),
+                         "<class 'models.base_model.BaseModel'>")
+        self.assertTrue(type(b1_dict['created_at']), 'datetime.datetime')
+        self.assertTrue(type(b1_dict['updated_at']), 'datetime.datetime')
+        self.assertTrue(type(b1_dict['id']), 'str')
+        test_dict = b1.to_dict()
+        self.assertEqual(test_dict['__class__'], "BaseModel")
+        self.assertTrue(type(test_dict['__class__']), 'str')
+        self.assertTrue(type(test_dict['created_at']), 'str')
+        self.assertTrue(type(test_dict['updated_at']), 'str')
+        self.assertTrue(type(test_dict['id']), 'str')
+
+    def test_str_(self):
+        """ tests str method """
+        b1 = BaseModel()
+        b1_str = b1.__str__()
+        self.assertEqual(b1_str,
+                         "[BaseModel] ({}) {}".format(b1.id, b1.__dict__))
+
+    def test_attr(self):
+        """ test attributes of BaseModel """
+        my_model = BaseModel()
+        new_model = BaseModel()
+        self.assertTrue(isinstance(my_model, BaseModel))
+        self.assertTrue(hasattr(my_model, "__init__"))
+        self.assertTrue(hasattr(my_model, "id"))
+        self.assertTrue(hasattr(my_model, "created_at"))
+        self.assertTrue(hasattr(my_model, "updated_at"))
+        self.assertNotEqual(my_model.id, new_model.id)
+
+    def test_args(self):
+        """ tests arg/kwarg """
+        my_model = BaseModel(20)
+        self.assertEqual(type(my_model).__name__, "BaseModel")
+        self.assertFalse(hasattr(my_model, "20"))
+        b1 = BaseModel(name='Gary')
+        self.assertEqual(type(b1).__name__, "BaseModel")
+        self.assertTrue(hasattr(b1, "name"))
+
+    def test_save(self):
+        """ tests save """
+        my_model = BaseModel()
+        my_model.save()
+        self.assertNotEqual(my_model.created_at, my_model.updated_at)
 
     def tearDown(self):
-        """ tear down method"""
+        """ tear down """
         try:
             os.remove("file.json")
         except:
             pass
-
-if __name__ == "__main__":
-    unittest.main()
