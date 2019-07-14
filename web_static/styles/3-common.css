@@ -1,7 +1,14 @@
+@charset "UTF-8";
+/* global */
 body {
-    margin:0;
-    padding:0;
-    color:#484848;
-    font-size:14px;
-    font-family:Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+p {
+        line-height: 30px;
+        text-align: center;
 }

@@ -1,8 +1,26 @@
+/* global */
+
 body {
-    color:#484848;
-    font-size: 14px;
-    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
 .container {
-    margin: auto;
-    max-width:1000px;
+    	max-width: 1000px;
+    	margin: 30px auto 30px auto;
+}
+
+footer p {
+	text-align: center;
+	line-height: 30px;
+}
+
+.holberton{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

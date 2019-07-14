@@ -1,0 +1,36 @@
+/* CSS Document */
+
+.title_places h1 {
+	font-size: 30px;
+	text-align: left;
+}
+.places{
+	margin: 20px;
+	padding-top: 5px;
+}
+
+.places_holder {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	width: 1000px;
+}
+
+.places h1 {
+	text-align: left;
+	font-size: 30px;
+}
+
+.places article h2{
+	font-size: 30px;
+}
+.places article {
+	border: 1px solid #FF5A5F;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+	width: 390px;
+	
+}
