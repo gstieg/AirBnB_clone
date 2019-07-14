@@ -17,6 +17,7 @@ from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter"""
+    counter = 0
     prompt = "(hbnb) "
     classes = {
                 "BaseModel",
@@ -76,6 +77,7 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             for key, obj in show.items():
                 list_obj.append(str(obj))
+                type(self).counter +=1
             print(list_obj)
         else:
             argv = args.split()
@@ -103,8 +105,18 @@ class HBNBCommand(cmd.Cmd):
             if key in show:
                 del show[key]
                 storage.save()
+                type(self).counter -= 1
             else:
                 print("** no instance found **")
+
+    def do_count(self, args):
+        '''returns the number of instances of a class'''
+        argv = args.split()
+        counter = 0
+        for inst in storage.all().values():
+            if argv[0] == inst.__class__.__name__:
+                counter += 1
+        print(counter)
 
     def do_update(self, args):
         ''' update instance based on the class name and id
