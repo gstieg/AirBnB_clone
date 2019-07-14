@@ -36,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         """ quits after reaching end of file"""
         return True
 
-    def empty_line(self, args):
+    def emptyline(self):
         """ dosent execute on empty line"""
         pass
 
