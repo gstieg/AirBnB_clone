@@ -16,6 +16,7 @@ button {
     border-radius:4px;
     width:20%
     border-style: none;
+    height: 48px;
 }
 
 .button:hover {
