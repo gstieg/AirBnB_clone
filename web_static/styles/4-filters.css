@@ -7,3 +7,15 @@
     border-radius:4px;
 }
 button {
+       height: 48px;
+       width: 20%;
+       color: #FFFFFF;
+       background-color: #FF5A5F
+       magrin: 11pxl
+       align-self: center;
+       border-style: none;
+       font-size: 18px;
+
+.filters button:hover {
+	 opacity: 0.9;
+}
