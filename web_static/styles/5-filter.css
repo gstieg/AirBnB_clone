@@ -1,8 +1,9 @@
 .filters {
     background-color: white;
-    height:70px;
-    width:100%;
-    border:solid 1px #DDDDDD;
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    border: solid 1px #DDDDDD;
     border-radius: 4px;
 }
 
@@ -10,13 +11,14 @@ button {
     background-color:#FF5A5F;
     color:#FFFFFF;
     margin-right: 30px;
+    font-size: 18px;
     margin: 11px;
     border-radius:4px;
     width:20%
-    border: none;
+    border-style: none;
 }
 
-button:hover {
+.button:hover {
     opacity:0.9;
 }
 
@@ -24,6 +26,7 @@ button:hover {
     text-align:left;
     height:100%
     margin-left:30px;
+    float: left;
     width:25%;
     border-right: solid 1px #DDDDDD;
 }
@@ -34,16 +37,16 @@ button:hover {
 }
 
 h3 {
-    margin-left:50px;
-    font-weight:600;
-    margin:0px;
-    padding:0px;
+    margin-left: 50px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
 }
 
 h4 {
     font-weight: 400;
-    font-size:14px;
-    margin-left:50px
-    padding:0px;
-    margin:0px;
+    font-size: 14px;
+    margin-left: 50px
+    padding: 0px;
+    margin: 0px;
 }
